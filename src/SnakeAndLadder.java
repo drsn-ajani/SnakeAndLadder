@@ -1,5 +1,5 @@
 public class SnakeAndLadder {
-    private int player_position;
+    private int player_position, die_roll = 0;
 
     public SnakeAndLadder() {
         this.player_position = 0;
@@ -12,6 +12,7 @@ public class SnakeAndLadder {
 
 //    UC-2      -->     Rolling the Dice
     public int roll_the_dice() {
+        die_roll++;
         return (int) Math.floor(Math.random() * 6) + 1;
     }
 
@@ -20,6 +21,7 @@ public class SnakeAndLadder {
         int num = (int) Math.floor(Math.random() * 3);
 
         int roll = roll_the_dice();
+        System.out.println(die_roll + " times die is rolled\t");
 
 
         switch (num) {
