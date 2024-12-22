@@ -27,8 +27,10 @@ public class SnakeAndLadder {
                 System.out.println("Player will stay at the same position");
                 break;
             case 1:
-                player_position += roll;
-                if (player_position >= 100)    player_position = 100;
+//                UC-5      -->     Restricting user from going beyond 100
+                if (player_position + roll <= 100)
+                    player_position += roll;
+//                if (player_position >= 100)    player_position = 100;
                 System.out.println("Player will move in Forward Dir with " + roll + " steps\tWill reach at " + player_position);
                 break;
 
