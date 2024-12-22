@@ -21,7 +21,8 @@ public class SnakeAndLadder {
         int num = (int) Math.floor(Math.random() * 3);
 
         int roll = roll_the_dice();
-        System.out.println(die_roll + " times die is rolled\t");
+//        UC-6      -->     No. of times Dice is rolled
+        System.out.println(die_roll + " times dice is rolled\t");
 
 
         switch (num) {
