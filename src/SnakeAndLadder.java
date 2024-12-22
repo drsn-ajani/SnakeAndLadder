@@ -21,22 +21,37 @@ public class SnakeAndLadder {
 
         int roll = roll_the_dice();
 
+
         switch (num) {
             case 0:
                 System.out.println("Player will stay at the same position");
                 break;
             case 1:
                 player_position += roll;
+                if (player_position >= 100)    player_position = 100;
                 System.out.println("Player will move in Forward Dir with " + roll + " steps\tWill reach at " + player_position);
                 break;
 
             case 2:
                 player_position -= roll;
+                if (player_position < 0)    player_position = 0;
                 System.out.println("Player will move in Backward Dir with " + roll + " steps\tWill reach at " + player_position);
                 break;
 
         }
     }
+
+
+//        UC-4      -->     Repeat Until player reaches at position 100
+        public void until_player_win() {
+            while (player_position < 100) {
+                set_player_position();
+//                System.out.println(player_position + "\t");
+            }
+            if (player_position == 100) {
+                System.out.println("Player Reached at the WINNING POSITION..!!");
+            }
+        }
 
     public static void main(String[] args) {
         System.out.println("Welcome to Snake And Ladder Game");
@@ -49,7 +64,13 @@ public class SnakeAndLadder {
 //        System.out.println("Number got on rolling the dice is: " + game.roll_the_dice());
 
 //        UC-3
-        game.set_player_position();
+//        game.set_player_position();
+
+
+//        UC-4
+        System.out.println("Before until player_win\n");
+        game.until_player_win();
+        System.out.println("\nAfter until player_win");
 
     }
 
